@@ -16,10 +16,24 @@ Btn.addEventListener('click', Convert);
 
 function Convert(){
     let res;
-    switch(choice){
-        case "USD":
-            res = input.value * baseRates[2][0];
+
+    if(choice.value == "USD"){
+        res = input.value * baseRates['EUR'].USD;
+    }if(choice.value == "GBP"){
+        res = input.value * baseRates['EUR'].GBP;
+    }if(choice.value == "CHF"){
+        res = input.value * baseRates['EUR'].CHF;
     }
 
-    result.innerContent = input.value + "EUR";
+    // switch(true){
+    //     case "USD":
+    //         res = input.value * baseRates['EUR'].USD;
+    //     case 'GBP':
+    //         res = input.value * baseRates['EUR'].GBP;
+    //     case 'CHF':
+    //         res = input.value * baseRates['EUR'].CHF;
+    //     default:
+    //         result.innerText = "invalid input";
+    // }
+    result.innerText = input.value + " EUR = " + res.toFixed(2) + " " + choice.value;
 }
