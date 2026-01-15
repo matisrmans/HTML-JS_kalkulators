@@ -1,5 +1,6 @@
 const input = document.getElementById('euro');
 const result = document.getElementById('result');
+const choice = document.getElementById('Valutas');
 const Btn = document.getElementById('convertBtn');
 
 const baseRates = {
@@ -9,3 +10,16 @@ const baseRates = {
   CHF: { EUR: 0.94, GBP: 0.81, USD: 1.03, CHF: 1.00, SEK:10.80 },
   SEK: { EUR: 0.087, GBP: 0.075, USD: 0.095, CHF: 0.093, SEK: 1.00 }
 };
+
+
+Btn.addEventListener('click', Convert);
+
+function Convert(){
+    let res;
+    switch(choice){
+        case "USD":
+            res = input.value * baseRates[2][0];
+    }
+
+    result.innerContent = input.value + "EUR";
+}
